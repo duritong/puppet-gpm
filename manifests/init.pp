@@ -10,7 +10,7 @@ class gpm {
         default: { include gpm::base }
     }
 
-    case $selinux {
+    if $selinux {
         include gpm::selinux
     }
 }
