@@ -5,9 +5,16 @@
 # modules_dir { "gpm": }
 
 class gpm {
-    case $operatingsystem {
-        gentoo: { include gpm::gentoo }
-        default: { include gpm::base }
+
+    case $virtual {
+        'physical': {    
+            case $operatingsystem {
+                gentoo: { include gpm::gentoo }
+                default: { include gpm::base }
+            }
+        }
+        # gpm makes only sense on physical hosts
+        default: { include gpm::disable }
     }
 
     if $selinux {
