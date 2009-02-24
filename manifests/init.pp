@@ -18,7 +18,7 @@ class gpm {
     }
 
     if $selinux {
-        include gpm::selinux
+//        include gpm::selinux
     }
 }
 
