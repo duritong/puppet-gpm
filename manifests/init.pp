@@ -3,9 +3,9 @@
 # GPLv3
 
 class gpm {
-  case $virtual {
+  case $::virtual {
     'physical','xen0': {    
-      case $operatingsystem {
+      case $::operatingsystem {
         gentoo: { include gpm::gentoo }
         default: { include gpm::base }
       }
