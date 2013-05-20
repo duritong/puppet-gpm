@@ -7,6 +7,7 @@ class gpm {
     'physical','xen0': {    
       case $::operatingsystem {
         gentoo: { include gpm::gentoo }
+        debian: { include gpm::debian }
         default: { include gpm::base }
       }
     }
